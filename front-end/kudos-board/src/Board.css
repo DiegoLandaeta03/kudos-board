@@ -1,0 +1,60 @@
+.board{
+    transition: all 0.4s ease;
+    margin: 1em;
+    color: white;
+    width: 230px;
+    height: 470px;
+}
+
+.board:hover{
+    transition: all 0.4s ease;
+    transform: translate3d(0, -2px, 0) scale(1.04);
+}
+
+.boardImage{
+    width: 100%;
+    height: 65%;
+}
+
+.boardDetails{
+    height: 5em;
+    text-align: center;
+    color: black;
+}
+
+.viewBoard{
+    transition: all 0.2s ease;
+    margin: 0.4em;
+    padding: 0.5em;
+    font-size: 14px;
+    background-color: rgb(45, 157, 150, 0.1);
+    border-radius: 5px;
+    border-color: lightgray;
+    text-decoration: underline;
+}
+
+.viewBoard:hover{
+    transition: all 0.2s ease;
+    transform: translate3d(0, -1px, 0) scale(1.04);
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1em;
+}
+
+.delete{
+    transition: all 0.2s ease;
+    margin: 0.4em;
+    padding: 0.5em;
+    font-size: 14px;
+    background-color: #2D9D96;
+    border-radius: 5px;
+    border-color: lightgray;
+}
+
+.delete:hover{
+    transition: all 0.2s ease;
+    transform: translate3d(0, -1px, 0) scale(1.04);
+}
