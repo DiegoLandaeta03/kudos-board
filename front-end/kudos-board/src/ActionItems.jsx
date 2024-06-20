@@ -1,15 +1,20 @@
 import './ActionItems.css'
 
-function ActionItems({ onCategoryClick }) {
+function ActionItems({ onSearch, onCategoryClick }) {
+    const handleSearch = (event) => {
+        const submittedData = event.target.value;
+        onSearch(submittedData);
+    };
+
     const handleCategory = (event) => {
         const submittedData = event.target.value;;
         onCategoryClick(submittedData);
     };
-    
+
     return (
         <div className='actionItems'>
             <div id='searchSection'>
-                <input id='input' type="search" placeholder="Search boards..." ></input>
+                <input onInput={handleSearch} id='input' type="search" placeholder="Search boards..." ></input>
             </div>
             <div className='navBar'>
                 <button onClick={handleCategory} className='button' value={'All'}>All</button>

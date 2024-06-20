@@ -4,7 +4,12 @@ import BoardList from './BoardList'
 import { useState } from 'react';
 
 function App() {
+  const [search, setSearch] = useState('');
   const [category, setCategory] = useState('All');
+
+  const handleSearch = (newSearch) => {
+    setSearch(newSearch);
+  }
 
   const handleCategory = (newCategory) => {
     setCategory(newCategory);
@@ -16,8 +21,8 @@ function App() {
         <h1 >Kudos Board</h1>
       </header>
       <main>
-        <ActionItems onCategoryClick={handleCategory}/>
-        <BoardList category={category}/>
+        <ActionItems onSearch={handleSearch} onCategoryClick={handleCategory}/>
+        <BoardList searchQuery={search} category={category}/>
       </main>
     </div>
   )

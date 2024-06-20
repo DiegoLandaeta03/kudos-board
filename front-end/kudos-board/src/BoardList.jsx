@@ -2,7 +2,7 @@ import './BoardList.css'
 import Board from './Board'
 import { useEffect, useState } from 'react'
 
-function BoardList({ category }) {
+function BoardList({ searchQuery, category }) {
     const [data, setData] = useState([]);
     const [deleteId, setDelete] = useState('')
 
@@ -22,10 +22,19 @@ function BoardList({ category }) {
             const options = {
                 method: "GET",
             }
-            fetch(`http://localhost:3000/boards/${category}`, options)
+
+            if(searchQuery != ''){
+                fetch(`http://localhost:3000/boards/search/${searchQuery}`, options)
                 .then(response => response.json())
                 .then(response => setData(response))
                 .catch(err => console.error(err))
+            }
+            else{
+                fetch(`http://localhost:3000/boards/category/${category}`, options)
+                .then(response => response.json())
+                .then(response => setData(response))
+                .catch(err => console.error(err))
+            }
         }
     }, [data, deleteId])
 
