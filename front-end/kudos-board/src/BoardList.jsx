@@ -2,7 +2,7 @@ import './BoardList.css'
 import Board from './Board'
 import { useEffect, useState } from 'react'
 
-function BoardList() {
+function BoardList({ category }) {
     const [data, setData] = useState([]);
 
     useEffect(() => {

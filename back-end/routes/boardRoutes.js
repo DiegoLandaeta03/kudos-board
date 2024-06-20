@@ -61,7 +61,7 @@ router.put('/:id', async (req, res) => {
     res.json(updatedBoard)
 })
 
-router.delete('/:id', async (req, res) => {
+router.delete('/delete/:id', async (req, res) => {
     // Handling not having that id
     try {
         const { id } = req.params
