@@ -17,7 +17,7 @@ function BoardList() {
 
     return (
         <div className='boardList'>
-            {data.map(board => (
+            {data?.map(board => (
                 <Board boardTitle={board.title} image={board.imageSrc}
                     key={board.id} genre={board.category} />)
             )}

@@ -11,9 +11,9 @@ function SearchForm() {
     // };
 
     return(
-        <form id='searchSection'>
-            <input id='input' name='dataInput' placeholder="Search boards..." ></input>
-        </form>
+        <div id='searchSection'>
+            <input id='input' type="search" placeholder="Search boards..." ></input>
+        </div>
     );
 }
 

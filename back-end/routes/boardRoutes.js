@@ -28,13 +28,16 @@ router.get('/:id', async (req, res) => {
 })
 
 router.post('/add', async (req, res) => {
-    const { title, imageSrc, category, author } = req.body
+    const { title, category, author } = req.body
 
-    const boards = await prisma.board.findMany()
+    const response = await fetch(`https://api.giphy.com/v1/gifs/random?api_key=${process.env.GIPHY_API_KEY}`)
+    const gifData = await response.json()
+    const imageUrl = gifData.data.images.downsized.url
+
     const newBoard = await prisma.board.create({
         data: {
             title,
-            imageSrc,
+            imageSrc: imageUrl,
             category,
             author
         }
@@ -44,13 +47,12 @@ router.post('/add', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
     const { id } = parseInt(req.params)
-    const { title, imageSrc, category, author } = req.body
+    const { title, category, author } = req.body
 
     const updatedBoard = await prisma.board.update({
         where: { id: id },
         data: {
             title,
-            imageSrc,
             category,
             author
         }
