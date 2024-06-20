@@ -52,6 +52,7 @@
     background-color: #2D9D96;
     border-radius: 5px;
     border-color: lightgray;
+    color: white;
 }
 
 .delete:hover{
