@@ -1,26 +1,12 @@
 import './Board.css';
-// import PropTypes from 'prop-types';
-// import { useState } from "react";
 
-const Board = () => {
-    // const [likeButton, setLike] = useState('🤍');
-    
-    // function liked(){
-    //     if(likeButton === '❤️'){
-    //         setLike('🤍')
-    //     }
-    //     else{
-    //         setLike('❤️');
-    //     }
-    // }
-
-
+const Board = ({image, boardTitle, genre}) => {
     return(
         <div className="board">
-            <img className="boardImage" src='https://picsum.photos/200/300?random=4' alt={`Image`} />
+            <img className="boardImage" src={image} alt={`Image`} />
             <div className="boardDetails">
-                    <h2 className="boardName">Congrats!</h2>
-                    <p className="genre">Celebration</p>
+                    <h2 className="boardName">{boardTitle}</h2>
+                    <p className="genre">{genre}</p>
             </div>
             <div className='buttons'>
                 <button className='viewBoard'>View Board</button>

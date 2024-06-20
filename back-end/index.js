@@ -1,13 +1,13 @@
 const express = require('express')
+const cors = require('cors')
+
 const app = express()
 const PORT = 3000
 
 const boardRoutes = require('./routes/boardRoutes')
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
-
+app.use(cors())
+app.use(express.json())
 app.use('/boards', boardRoutes)
 
 app.listen(PORT, () => {
