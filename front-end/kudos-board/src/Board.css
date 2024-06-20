@@ -3,7 +3,7 @@
     margin: 1em;
     color: white;
     width: 230px;
-    height: 470px;
+    height: 450px;
 }
 
 .board:hover{
@@ -13,7 +13,7 @@
 
 .boardImage{
     width: 100%;
-    height: 65%;
+    height: 50%;
 }
 
 .boardDetails{

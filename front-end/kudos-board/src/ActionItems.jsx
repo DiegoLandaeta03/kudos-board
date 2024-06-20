@@ -1,19 +1,21 @@
 import './ActionItems.css'
-// import SearchForm from './SearchForm'
 
-function ActionItems() {
-
+function ActionItems({ onCategoryClick }) {
+    const handleCategory = (event) => {
+        const submittedData = event.target.value;;
+        onCategoryClick(submittedData);
+    };
     return (
         <div className='actionItems'>
             <div id='searchSection'>
                 <input id='input' type="search" placeholder="Search boards..." ></input>
             </div>
             <div className='navBar'>
-                <button className='button'>All</button>
-                <button className='button'>Recent</button>
-                <button className='button'>Celebration</button>
-                <button className='button'>Thank you</button>
-                <button className='button'>Inspiration</button>
+                <button onClick={handleCategory} className='button' value={'All'}>All</button>
+                <button onClick={handleCategory} className='button' value={'Recent'}>Recent</button>
+                <button onClick={handleCategory} className='button' value={'Celebration'}>Celebration</button>
+                <button onClick={handleCategory} className='button' value={'Thank you'}>Thank you</button>
+                <button onClick={handleCategory} className='button' value={'Inspiration'}>Inspiration</button>
             </div>
             <button className='button'>Create a New Board</button>
         </div>

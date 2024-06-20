@@ -9,11 +9,11 @@ function BoardList({ category }) {
         const options = {
             method: "GET",
         }
-        fetch(`http://localhost:3000/boards`, options)
+        fetch(`http://localhost:3000/boards/${category}`, options)
             .then(response => response.json())
             .then(response => setData(response))
             .catch(err => console.error(err))
-    }, [data])
+    }, [data, category])
 
     return (
         <div className='boardList'>
