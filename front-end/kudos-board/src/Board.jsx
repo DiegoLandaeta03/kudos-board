@@ -1,6 +1,6 @@
 import './Board.css';
 
-const Board = ({ image, boardTitle, genre }) => {
+const Board = ({ image, boardTitle, genre, deleteBoard, id}) => {
     return (
         <div className="board">
             <img className="boardImage" src={image} alt={`Image`} />
@@ -10,7 +10,7 @@ const Board = ({ image, boardTitle, genre }) => {
             </div>
             <div className='buttons'>
                 <button className='viewBoard'>View Board</button>
-                <button className='delete'>Delete Board</button>
+                <button onClick={() => deleteBoard(id)} className='delete'>Delete Board</button>
             </div>
         </div>
     );

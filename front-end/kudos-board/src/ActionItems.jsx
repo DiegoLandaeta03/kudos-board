@@ -5,6 +5,7 @@ function ActionItems({ onCategoryClick }) {
         const submittedData = event.target.value;;
         onCategoryClick(submittedData);
     };
+    
     return (
         <div className='actionItems'>
             <div id='searchSection'>
