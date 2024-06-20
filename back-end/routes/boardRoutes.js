@@ -11,6 +11,36 @@ router.get('/', async (req, res) => {
     res.json(boards)
 })
 
+router.get('/:category', async (req, res) => {
+    // Handling not having that id
+    try {
+        const { category } = req.params
+
+        if (category == "All") {
+            const boards = await prisma.board.findMany()
+            res.json(boards)
+        }
+        else if (category == "Recent") {
+            const boards = await prisma.board.findMany({
+                orderBy: {
+                    id: 'desc'
+                },
+            })
+            res.json(boards)
+        }
+        else {
+            const boards = await prisma.board.findMany({
+                where: { category: category }
+            })
+            res.status(200).json(boards)
+        }
+    }
+    catch (error) {
+        console.log("Error getting board:", error)
+        res.status(500).json({ error: 'Failed to retrieve board.' })
+    }
+})
+
 router.get('/:id', async (req, res) => {
     // Handling not having that id
     try {
