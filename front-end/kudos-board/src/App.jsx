@@ -1,6 +1,7 @@
 import './App.css'
 import ActionItems from './ActionItems'
 import BoardList from './BoardList'
+import CardList from './CardList';
 import { useState } from 'react';
 import Modal from './Modal';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
@@ -46,12 +47,13 @@ function App() {
         <Route path='/cards/:id' element={
           <div className='app'>
             <header>
-              <h1>Board page</h1>
+              <h1>Board Page</h1>
             </header>
             <main>
               <Link to='/boards'>
                 <button>Go back</button>
               </Link>
+              <CardList />
             </main>
           </div>
         }/>

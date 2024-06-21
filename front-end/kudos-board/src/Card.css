@@ -1,0 +1,57 @@
+.card{
+    transition: all 0.4s ease;
+    margin: 1em;
+    color: white;
+    width: 230px;
+    height: 450px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgrey;
+}
+
+.card:hover{
+    transition: all 0.4s ease;
+    transform: translate3d(0, -2px, 0) scale(1.04);
+}
+
+.imageSection{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.cardImage{
+    width: 80%;
+    height: 100%;
+}
+
+.cardDetails{
+    height: 5em;
+    text-align: center;
+    color: black;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1em;
+    margin-top: 2em;
+}
+
+.delete{
+    transition: all 0.2s ease;
+    margin: 0.4em;
+    padding: 0.5em;
+    font-size: 14px;
+    background-color: #2D9D96;
+    border-radius: 5px;
+    border-color: lightgray;
+    color: white;
+}
+
+.delete:hover{
+    transition: all 0.2s ease;
+    transform: translate3d(0, -1px, 0) scale(1.04);
+}

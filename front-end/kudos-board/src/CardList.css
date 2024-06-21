@@ -1,0 +1,11 @@
+.cardList{
+    padding: 2em;
+    padding-bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.title{
+    text-align: center;
+}
