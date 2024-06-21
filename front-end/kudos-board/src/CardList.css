@@ -9,3 +9,19 @@
 .title{
     text-align: center;
 }
+
+.createCard{
+    transition: all 0.2s ease;
+    margin: 0.4em;
+    padding: 0.5em;
+    font-size: 14px;
+    background-color: rgb(45, 157, 150, 0.1);
+    border-radius: 5px;
+    border-color: lightgray;
+}
+
+.createCard:hover{
+    transition: all 0.2s ease;
+    background-color: white;
+    transform: translate3d(0, -1px, 0) scale(1.04);
+}

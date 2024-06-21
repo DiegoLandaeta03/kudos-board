@@ -2,6 +2,7 @@ import './App.css'
 import ActionItems from './ActionItems'
 import BoardList from './BoardList'
 import CardList from './CardList';
+import CardModal from './CardModal';
 import { useState } from 'react';
 import Modal from './Modal';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
@@ -10,6 +11,7 @@ function App() {
   const [search, setSearch] = useState('');
   const [category, setCategory] = useState('All');
   const [modalOpen, setModalOpen] = useState(false);
+  const [cardModal, setCardModal] = useState(false);
 
   const handleSearch = (newSearch) => {
     setSearch(newSearch);
@@ -27,6 +29,14 @@ function App() {
     setModalOpen(false);
   }
 
+  const openCardModal = () => {
+    setCardModal(true);
+  }
+
+  const closeCardModal = () => {
+    setCardModal(false);
+  }
+
   return (
     <Router>
       <Routes>
@@ -42,6 +52,11 @@ function App() {
               ) : null}
               <BoardList searchQuery={search} category={category} />
             </main>
+            <footer>
+              <p id='contact'> Contact us at: contactus@kudosboard.com | (805) 324 - 1624</p>
+              <p> </p>
+              <p> Copyright © 2024 Kudos Board, Inc.</p>
+            </footer>
           </div>
         } />
         <Route path='/cards/:id' element={
@@ -51,12 +66,20 @@ function App() {
             </header>
             <main>
               <Link to='/boards'>
-                <button>Go back</button>
+                <button className='arrow-button'></button>
               </Link>
-              <CardList />
+              <CardList openModal={openCardModal} />
+              {cardModal ? (
+                <CardModal close={() => closeCardModal()} />
+              ) : null}
             </main>
+            <footer>
+              <p id='contact'> Contact us at: contactus@kudosboard.com | (805) 324 - 1624</p>
+              <p> </p>
+              <p> Copyright © 2024 Kudos Board, Inc.</p>
+            </footer>
           </div>
-        }/>
+        } />
       </Routes>
     </Router>
   )

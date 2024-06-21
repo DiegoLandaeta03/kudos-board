@@ -1,3 +1,9 @@
+body{
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
 header{
   text-align: center;
   background-color: #2D9D96;
@@ -8,4 +14,33 @@ header h1{
   padding-top: 1em;
   padding-bottom: 1em;
   color: white;
+}
+
+.arrow-button {
+  margin-top: 1em;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/60/60775.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+}
+
+footer{
+  background-color: #282c34;
+  margin-top: auto;
+  padding-bottom: 1.5em;
+  padding-top: 2em;
+  text-align: center;
+}
+
+footer p{
+  color: white;
+  margin-bottom: 2em;
+}
+
+#contact{
+  margin-top:0;
 }

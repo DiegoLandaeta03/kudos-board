@@ -4,7 +4,7 @@ import Card from './Card'
 
 import { useEffect, useState } from 'react'
 
-function CardList() {
+function CardList({ openModal }) {
     const [data, setData] = useState([]);
     const [deleteId, setDelete] = useState('')
     const params = useParams();
@@ -46,6 +46,7 @@ function CardList() {
         <div>
             <div className='title'>
                 <h2>{title}</h2>
+                <button className='createCard' onClick={openModal}>Create Card</button>
             </div>
             <div className='cardList'>
                 {data?.map(card => (

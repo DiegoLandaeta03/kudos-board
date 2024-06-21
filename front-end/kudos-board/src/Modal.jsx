@@ -6,7 +6,7 @@ function Modal({ close }) {
         const form = event.target.form;
         const title = form.title.value;
         const category = form.category.value;
-        console.log(`Title: ${title}, category: ${category}`);
+        
         if (!title) {
             alert('Need to input title');
             return;
