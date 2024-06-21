@@ -13,7 +13,6 @@ function CardModal({ close }) {
         const cardTitle = form.title.value;
         const cardInfo = form.info.value;
         const cardImage = gifUrl;
-        // const cardImage = `https://media3.giphy.com/media/UZOny91tZDtDyXPrJC/200w.gif?cid=6c09b952t3szbfvugukdrc9wiow7568irl2vniskv1tv2gtn&ep=v1_gifs_search&rid=200w.gif&ct=g`;
 
         if (!cardTitle) {
             alert('Need to input title');
