@@ -1,4 +1,5 @@
 import './Board.css';
+import { Link } from 'react-router-dom'
 
 const Board = ({ image, boardTitle, genre, deleteBoard, id}) => {
     return (
@@ -9,7 +10,9 @@ const Board = ({ image, boardTitle, genre, deleteBoard, id}) => {
                 <p className="genre">{genre}</p>
             </div>
             <div className='buttons'>
-                <button className='viewBoard'>View Board</button>
+                <Link to={`/cards/${id}`}>
+                    <button className='viewBoard'>View Board</button>
+                </Link>
                 <button onClick={() => deleteBoard(id)} className='delete'>Delete Board</button>
             </div>
         </div>

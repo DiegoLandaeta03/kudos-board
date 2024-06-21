@@ -14,9 +14,22 @@ datasource db {
 }
 
 model Board {
-  id  Int  @id @default(autoincrement())
-  title String
+  id        Int  @id @default(autoincrement())
+  title     String
   imageSrc  String
   category  String
-  author  String
+  author    String
+  cards     Card[]
+}
+
+model Card {
+  id        Int @id @default(autoincrement())
+  cardTitle String
+  cardInfo  String
+  cardImage String
+  cardOwner String
+
+  Board     Board?  @relation(fields: [boardId], references: [id])
+
+  boardId   Int?
 }
