@@ -51,4 +51,19 @@ router.post('/add/:id', async (req, res) => {
     }
 })
 
+router.delete('/delete/:id', async (req, res) => {
+    try {
+        const cardId = parseInt(req.params.id)
+        await prisma.card.delete({
+            where: {
+                id: cardId
+            }
+        })
+        res.status(200).json({ message: 'Card deleted successfully' })
+    } catch (error) {
+        console.log("Error deleting board:", error)
+        res.status(500).json({ error: 'Failed to delete Card' })
+    }
+})
+
 module.exports = router

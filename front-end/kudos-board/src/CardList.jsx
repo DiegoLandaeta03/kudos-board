@@ -17,11 +17,11 @@ function CardList() {
 
     useEffect(() => {
         if (deleteId != '') {
-            // const options = {
-            //     method: "DELETE",
-            // }
-            // fetch(`http://localhost:3000/boards/delete/${deleteId}`, options)
-            // setDelete('')
+            const options = {
+                method: "DELETE",
+            }
+            fetch(`http://localhost:3000/cards/delete/${deleteId}`, options)
+            setDelete('')
         }
         else {
             const options = {
