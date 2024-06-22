@@ -28,6 +28,7 @@ model Card {
   cardInfo  String
   cardImage String
   cardOwner String
+  upVotes   Int
 
   Board     Board?  @relation(fields: [boardId], references: [id])
 

@@ -40,7 +40,8 @@ router.post('/add/:id', async (req, res) => {
                 cardInfo,
                 cardImage,
                 cardOwner,
-                boardId: boardId
+                boardId: boardId,
+                upVotes: 0
             }
         })
         res.status(200).json(newCard)
@@ -49,6 +50,23 @@ router.post('/add/:id', async (req, res) => {
         console.log("Error getting board coards:", error)
         res.status(500).json({ error: 'Failed to retrieve board cards.' })
     }
+})
+
+router.patch('/:id', async (req, res) => {
+    const id = parseInt(req.params.id)
+    const card = await prisma.card.findUnique({
+        where: { id }
+    })
+
+    if (!card) {
+        return res.status(404).send({ message: 'Card not found' })
+    }
+
+    const updatedCard = await prisma.card.update({
+        where: { id },
+        data: { upVotes: card.upVotes + 1 },
+    })
+    res.json(updatedCard)
 })
 
 router.delete('/delete/:id', async (req, res) => {

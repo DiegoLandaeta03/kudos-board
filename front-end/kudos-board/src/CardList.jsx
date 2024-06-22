@@ -51,7 +51,7 @@ function CardList({ openModal }) {
             <div className='cardList'>
                 {data?.map(card => (
                     <Card cardTitle={card.cardTitle} cardInfo={card.cardInfo} cardImage={card.cardImage}
-                        key={card.id} id={card.id} cardOwner={card.cardOwner} deleteCard={handleDelete} />)
+                        key={card.id} id={card.id} cardOwner={card.cardOwner} upVotes={card.upVotes} deleteCard={handleDelete} />)
                 )}
             </div>
         </div>
